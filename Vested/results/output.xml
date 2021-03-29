@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.6.0 on win32)" generated="20210329 19:43:21.061" rpa="false">
+<suite id="s1" name="TestCases" source="E:\Vested\Testcases\TestCases.robot">
+<test id="s1-t1" name="Open_App">
+<kw name="When user launches App" library="LandingPage">
+<kw name="Open Application" library="AppiumLibrary">
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<arguments>
+<arg>${porturl}</arg>
+<arg>platformName=${platform}</arg>
+<arg>deviceName=${device}</arg>
+<arg>appPackage=${package}</arg>
+<arg>appActivity=${activity}</arg>
+<arg>automationName=${automator}</arg>
+</arguments>
+<status status="PASS" starttime="20210329 19:43:21.466" endtime="20210329 19:43:34.941"></status>
+</kw>
+<kw name="Looking for Text" library="LandingPage">
+<arguments>
+<arg>${button1}</arg>
+</arguments>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${text}</arg>
+<arg>timeout=30s</arg>
+</arguments>
+<status status="PASS" starttime="20210329 19:43:34.942" endtime="20210329 19:43:41.556"></status>
+</kw>
+<status status="PASS" starttime="20210329 19:43:34.942" endtime="20210329 19:43:41.557"></status>
+</kw>
+<kw name="Log Source" library="AppiumLibrary">
+<doc>Logs and returns the entire html source of the current page or frame.</doc>
+<arguments>
+<arg>loglevel=INFO</arg>
+</arguments>
+<msg timestamp="20210329 19:43:41.823" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="2028"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2028]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.vested.investing.android.staging" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,2028]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.vested.investing.android.staging" class="android.widget.LinearLayout" text="" resource-id="com.vested.investing.android.staging:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true"&gt;
+            &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true"&gt;
+              &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true" /&gt;
+              &lt;android.view.ViewGroup index="1" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true" /&gt;
+              &lt;android.view.ViewGroup index="2" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true"&gt;
+                    &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true"&gt;
+                      &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true"&gt;
+                        &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true"&gt;
+                          &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true"&gt;
+                            &lt;android.widget.ScrollView index="0" package="com.vested.investing.android.staging" class="android.widget.ScrollView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,66][1080,2028]" displayed="true"&gt;
+                              &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,66][1080,2028]" displayed="true"&gt;
+                                &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[442,149][640,347]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="1" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Welcome to Vested!" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[260,375][822,458]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="2" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Invest in US companies and diversify globally with fractional share investing" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,485][998,595]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="3" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,677][171,765]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="4" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Security" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,664][998,722]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="5" package="com.vested.investing.android.staging" class="android.widget.TextView" text="We partner with SEC-regulated and SIPC-member firms that insure your account up to $500,000." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,722][998,893]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="6" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,961][171,1049]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="7" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Compliance" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,948][998,1006]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="8" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Vested seeks to comply with government regulations. We provide tax documents for your filings." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1006][998,1177]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="9" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1245][171,1333]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="10" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Recommendations" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1232][998,1290]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="11" package="com.vested.investing.android.staging" class="android.widget.TextView" text="We offer Vests, curated portfolios that comprise of stocks and/or ETFs. Vests enable you to invest in diversified core assets or focus on specific industries and core themes." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1290][998,1577]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="12" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[232,1645][848,1769]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Start Investing" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[397,1678][683,1736]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.widget.TextView index="13" package="com.vested.investing.android.staging" class="android.widget.TextView" text='By selecting "Start Investing", you agree to our terms and policy. You also acknowledge you have read our disclosure and brochure.' checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1838][998,1985]" displayed="true" /&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                            &lt;/android.widget.ScrollView&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                        &lt;/android.view.ViewGroup&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.view.ViewGroup&gt;
+            &lt;/android.widget.FrameLayout&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<status status="PASS" starttime="20210329 19:43:41.557" endtime="20210329 19:43:41.824"></status>
+</kw>
+<status status="PASS" starttime="20210329 19:43:21.465" endtime="20210329 19:43:41.824"></status>
+</kw>
+<kw name="Click on Start Investing" library="LandingPage">
+<kw name="Click Text" library="AppiumLibrary">
+<doc>Click text identified by ``text``.</doc>
+<arguments>
+<arg>Start Investing</arg>
+<arg>exact_match=True</arg>
+</arguments>
+<status status="PASS" starttime="20210329 19:43:41.825" endtime="20210329 19:43:42.045"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20210329 19:43:47.047" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210329 19:43:42.045" endtime="20210329 19:43:47.047"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Sign in with your email and password</arg>
+</arguments>
+<status status="PASS" starttime="20210329 19:43:47.048" endtime="20210329 19:43:47.308"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Sign-in Page Verified!</arg>
+</arguments>
+<status status="PASS" starttime="20210329 19:43:47.308" endtime="20210329 19:43:47.309"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20210329 19:43:52.310" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210329 19:43:47.309" endtime="20210329 19:43:52.311"></status>
+</kw>
+<status status="PASS" starttime="20210329 19:43:41.825" endtime="20210329 19:43:52.311"></status>
+</kw>
+<kw name="Sign-in with Credentials" library="LandingPage">
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>${email_signin}</arg>
+</arguments>
+<status status="PASS" starttime="20210329 19:43:52.315" endtime="20210329 19:43:52.459"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${email_signin}</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20210329 19:43:52.461" level="INFO">Typing text 'indrajit+9377@vestedfinance.co' into text field 'xpath=//*[@resource-id='signInFormUsername']'</msg>
+<status status="PASS" starttime="20210329 19:43:52.460" endtime="20210329 19:43:52.571"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${password}</arg>
+<arg>${pwd}</arg>
+</arguments>
+<msg timestamp="20210329 19:43:52.574" level="INFO">Typing text 'iTestUser1!' into text field 'xpath=//*[@resource-id='signInFormPassword']'</msg>
+<status status="PASS" starttime="20210329 19:43:52.571" endtime="20210329 19:43:53.203"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${submit}</arg>
+</arguments>
+<msg timestamp="20210329 19:43:53.206" level="INFO">Clicking element 'xpath=//*[@text='submit']'.</msg>
+<status status="PASS" starttime="20210329 19:43:53.203" endtime="20210329 19:43:53.752"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20210329 19:43:58.754" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210329 19:43:53.753" endtime="20210329 19:43:58.754"></status>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>${enter_pin}</arg>
+<arg>${pin_num}</arg>
+</arguments>
+<msg timestamp="20210329 19:43:58.756" level="INFO">Typing text '111111' into text field 'xpath=//*[@text='Enter Pin']'</msg>
+<status status="PASS" starttime="20210329 19:43:58.754" endtime="20210329 19:43:59.541"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>2s</arg>
+</arguments>
+<msg timestamp="20210329 19:44:01.542" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210329 19:43:59.541" endtime="20210329 19:44:01.542"></status>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>${continue}</arg>
+</arguments>
+<msg timestamp="20210329 19:44:01.546" level="INFO">Clicking element 'xpath=//*[@text='Continue']'.</msg>
+<status status="PASS" starttime="20210329 19:44:01.543" endtime="20210329 19:44:02.239"></status>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>5s</arg>
+</arguments>
+<msg timestamp="20210329 19:44:07.240" level="INFO">Slept 5 seconds</msg>
+<status status="PASS" starttime="20210329 19:44:02.239" endtime="20210329 19:44:07.240"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Sign in successful</arg>
+</arguments>
+<status status="PASS" starttime="20210329 19:44:07.240" endtime="20210329 19:44:07.242"></status>
+</kw>
+<status status="PASS" starttime="20210329 19:43:52.313" endtime="20210329 19:44:07.242"></status>
+</kw>
+<status status="PASS" starttime="20210329 19:43:21.464" endtime="20210329 19:44:07.243" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210329 19:43:21.064" endtime="20210329 19:44:07.245"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="TestCases">TestCases</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
