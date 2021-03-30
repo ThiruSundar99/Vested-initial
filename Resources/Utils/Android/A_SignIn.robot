@@ -7,8 +7,10 @@ Resource   ../../../AppLocators/Android/LandingPageLocators.robot
 
 *** Keywords ***
 
-User is in Sign In page
+User is navigated to Sign In page
     Wait And Click Element On Android  ${vf_A_startInvestingBtn}
+    Wait Until Page Contains  Sign in with your email and password
+    Log to Console  User is in Sign-in Page!
 
 Clicked on 'Sign up' link besides 'Need an account?' text
     Wait And Click Element On Android  ${vf_A_signUpLink}
@@ -58,8 +60,8 @@ Clicked on 'Sign in' button
     Log To Console  Verified error msg text
 
 "Please fill out this field" message is displayed
-    #Wait Until Page Contains  ${e_emptyFieldErrorTxt}  timeout=10s
     Click Element  ${vf_A_submitBtn}
-    Page Should Contain Text  ${e_emptyFieldErrorTxt}  loglevel=INFO
+    Capture Page Screenshot 
+    #Page Should Contain Text  ${e_emptyFieldErrorTxt}  loglevel=INFO
     #Element Should Be Visible  ${e_emptyFieldErrorMsg}  loglevel=INFO
     Log To Console  Verified error msg text

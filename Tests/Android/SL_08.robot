@@ -16,7 +16,7 @@ Suite Setup  Open Vested App On Emulator
 
 Error message- "Please fill in this field", When the empty field is passed by entering only email
     [Tags]  SL08
-    User is in Sign In page
+    User is navigated to Sign In page
     User enters only email id in Email field
     Clicked on 'Sign in' button
     "Please fill out this field" message is displayed

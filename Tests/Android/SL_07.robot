@@ -15,7 +15,7 @@ Suite Setup  Open Vested App On Emulator
 
 Sign in with invalid login credentials
     [Tags]  SL07
-    User is in Sign In page
+    User is navigated to Sign In page
     User enters incorrect email and password
     Clicked on 'Sign in' button
     "The username or password you entered is invalid" Error message is displayed

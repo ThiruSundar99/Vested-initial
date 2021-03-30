@@ -16,7 +16,7 @@ Suite Setup  Open Vested App On Emulator
 
 Switch between Sign In and Sign up by selecting provided links
     [Tags]  SL05
-    User is in Sign In page
+    User is navigated to Sign In page
     Clicked on 'Sign up' link besides 'Need an account?' text
     Clicked on 'Sign in' link besides 'Already have an account?' text
     'Sign in' button with Email & password fields are displayed

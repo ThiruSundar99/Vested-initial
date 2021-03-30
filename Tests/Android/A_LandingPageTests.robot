@@ -26,4 +26,10 @@ Points on Security, Compliance and Recommendations in Landing page
     Verify 3 points on Security, Compliance and Recommendations with icons are displayed
     Verify Heading for each point is displayed
 
+Start Investing button is clickable in Landing page
+    [Tags]  SL03
+    Landing page is loaded completely
+    Click on 'Start Investing' button
+    Sign in page is displayed
+
     

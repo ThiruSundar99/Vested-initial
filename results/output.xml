@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 3.2.2 (Python 3.9.2 on darwin)" generated="20210330 15:40:04.132" rpa="false">
-<suite id="s1" name="SL 07" source="/Users/apple/Tools/Git/GitRepo/Tests/Android/SL_07.robot">
+<robot generator="Robot 3.2.2 (Python 3.9.2 on darwin)" generated="20210330 16:27:37.022" rpa="false">
+<suite id="s1" name="A LandingPageTests" source="/Users/apple/Tools/Git/GitRepo/Tests/Android/A_LandingPageTests.robot">
 <kw name="Open Vested App On Emulator" library="A_Common" type="setup">
 <kw name="Open Application" library="AppiumLibrary">
 <doc>Opens a new application to given Appium server.
@@ -17,261 +17,489 @@ Please check https://github.com/appium/appium/blob/master/docs/en/writing-runnin
 <arg>appActivity=${app_activity}</arg>
 <arg>automationName=Uiautomator2</arg>
 </arguments>
-<status status="PASS" starttime="20210330 15:40:04.635" endtime="20210330 15:40:16.190"></status>
+<status status="PASS" starttime="20210330 16:27:37.541" endtime="20210330 16:27:47.624"></status>
 </kw>
-<status status="PASS" starttime="20210330 15:40:04.634" endtime="20210330 15:40:16.192"></status>
+<status status="PASS" starttime="20210330 16:27:37.540" endtime="20210330 16:27:47.624"></status>
 </kw>
-<test id="s1-t1" name="Sign in with invalid login credentials">
-<kw name="User is in Sign In page" library="A_SignIn">
-<kw name="Wait And Click Element On Android" library="A_Common">
+<test id="s1-t1" name="Vested icon and About text in Landing page">
+<kw name="Landing page is loaded completely" library="A_LandingPage">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
 <arguments>
-<arg>${vf_A_startInvestingBtn}</arg>
+<arg>${e_startInvestingTxt}</arg>
+<arg>timeout=20s</arg>
 </arguments>
-<kw name="Wait For Element Visibility On Android" library="A_Common">
-<arguments>
-<arg>${element}</arg>
-</arguments>
-<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>${element}</arg>
-<arg>timeout=30</arg>
-</arguments>
-<status status="PASS" starttime="20210330 15:40:16.204" endtime="20210330 15:40:21.483"></status>
-</kw>
-<status status="PASS" starttime="20210330 15:40:16.198" endtime="20210330 15:40:21.483"></status>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>${element}</arg>
-</arguments>
-<msg timestamp="20210330 15:40:21.486" level="INFO">Clicking element 'xpath=//*[@text='Start Investing']'.</msg>
-<status status="PASS" starttime="20210330 15:40:21.484" endtime="20210330 15:40:21.608"></status>
-</kw>
-<status status="PASS" starttime="20210330 15:40:16.197" endtime="20210330 15:40:21.609"></status>
-</kw>
-<status status="PASS" starttime="20210330 15:40:16.196" endtime="20210330 15:40:21.609"></status>
-</kw>
-<kw name="User enters incorrect email and password" library="A_SignIn">
-<kw name="Wait For Element Visibility On Android" library="A_Common">
-<arguments>
-<arg>${vf_A_userName}</arg>
-</arguments>
-<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>${element}</arg>
-<arg>timeout=30</arg>
-</arguments>
-<status status="PASS" starttime="20210330 15:40:21.610" endtime="20210330 15:40:26.109"></status>
-</kw>
-<status status="PASS" starttime="20210330 15:40:21.609" endtime="20210330 15:40:26.109"></status>
-</kw>
-<kw name="Input Text" library="AppiumLibrary">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>${vf_A_userName}</arg>
-<arg>${e_incorrectUserName}</arg>
-</arguments>
-<msg timestamp="20210330 15:40:26.113" level="INFO">Typing text 'abcd@gmail.com' into text field 'xpath=//*[@class='android.widget.EditText']'</msg>
-<status status="PASS" starttime="20210330 15:40:26.110" endtime="20210330 15:40:26.200"></status>
-</kw>
-<kw name="Input Text" library="AppiumLibrary">
-<doc>Types the given `text` into text field identified by `locator`.</doc>
-<arguments>
-<arg>${vf_A_password}</arg>
-<arg>${e_incorrectPassword}</arg>
-</arguments>
-<msg timestamp="20210330 15:40:26.204" level="INFO">Typing text 'Abcd@123' into text field 'xpath=//*[@class='android.widget.EditText'][2]'</msg>
-<status status="PASS" starttime="20210330 15:40:26.200" endtime="20210330 15:40:27.245"></status>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
-<arguments>
-<arg>Entered incorrect email and password</arg>
-</arguments>
-<status status="PASS" starttime="20210330 15:40:27.245" endtime="20210330 15:40:27.246"></status>
-</kw>
-<status status="PASS" starttime="20210330 15:40:21.609" endtime="20210330 15:40:27.246"></status>
-</kw>
-<kw name="Clicked on 'Sign in' button" library="A_SignIn">
-<kw name="Wait And Click Element On Android" library="A_Common">
-<arguments>
-<arg>${vf_A_submitBtn}</arg>
-</arguments>
-<kw name="Wait For Element Visibility On Android" library="A_Common">
-<arguments>
-<arg>${element}</arg>
-</arguments>
-<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
-<doc>Waits until element specified with `locator` is visible.</doc>
-<arguments>
-<arg>${element}</arg>
-<arg>timeout=30</arg>
-</arguments>
-<status status="PASS" starttime="20210330 15:40:27.248" endtime="20210330 15:40:27.776"></status>
-</kw>
-<status status="PASS" starttime="20210330 15:40:27.247" endtime="20210330 15:40:27.776"></status>
-</kw>
-<kw name="Click Element" library="AppiumLibrary">
-<doc>Click element identified by `locator`.</doc>
-<arguments>
-<arg>${element}</arg>
-</arguments>
-<msg timestamp="20210330 15:40:27.780" level="INFO">Clicking element 'xpath=//*[@text='submit']'.</msg>
-<status status="PASS" starttime="20210330 15:40:27.776" endtime="20210330 15:40:27.892"></status>
-</kw>
-<status status="PASS" starttime="20210330 15:40:27.247" endtime="20210330 15:40:27.893"></status>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<doc>Logs the given message to the console.</doc>
-<arguments>
-<arg>Clicked SignIn Button</arg>
-</arguments>
-<status status="PASS" starttime="20210330 15:40:27.893" endtime="20210330 15:40:27.894"></status>
+<status status="PASS" starttime="20210330 16:27:47.625" endtime="20210330 16:27:52.806"></status>
 </kw>
 <kw name="Log Source" library="AppiumLibrary">
 <doc>Logs and returns the entire html source of the current page or frame.</doc>
 <arguments>
 <arg>loglevel=INFO</arg>
 </arguments>
-<msg timestamp="20210330 15:40:29.051" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+<msg timestamp="20210330 16:27:52.994" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
 &lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="1977"&gt;
-  &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1977]" displayed="true"&gt;
-    &lt;android.widget.LinearLayout index="0" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1977]" displayed="true"&gt;
-      &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-        &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-          &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-            &lt;android.view.ViewGroup index="0" package="com.android.chrome" class="android.view.ViewGroup" text="" resource-id="com.android.chrome:id/coordinator" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-              &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/compositor_view_holder" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-                &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-                  &lt;android.view.View index="0" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true" /&gt;
-                &lt;/android.widget.FrameLayout&gt;
-                &lt;android.widget.FrameLayout index="1" package="com.android.chrome" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
-                  &lt;android.webkit.WebView index="0" package="com.android.chrome" class="android.webkit.WebView" text="Signin" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,325][1080,1977]" displayed="true"&gt;
-                    &lt;android.view.View index="0" package="com.android.chrome" class="android.view.View" text="  " checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[38,325][1080,1977]" displayed="true" /&gt;
-                    &lt;android.view.View index="1" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[66,349][1014,1977]" displayed="true"&gt;
-                      &lt;android.view.View index="0" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[66,349][1014,1977]" displayed="true"&gt;
-                        &lt;android.view.View index="0" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[66,418][1014,506]" displayed="true"&gt;
-                          &lt;android.widget.Image index="0" package="com.android.chrome" class="android.widget.Image" text="logo" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[374,418][706,506]" displayed="true" /&gt;
-                        &lt;/android.view.View&gt;
-                        &lt;android.view.View index="1" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[66,569][1014,1977]" displayed="true"&gt;
-                          &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="Sign In with your social account" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,646][797,707]" displayed="true" /&gt;
-                          &lt;android.widget.Button index="1" package="com.android.chrome" class="android.widget.Button" text="Continue with Apple" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,737][973,850]" displayed="true" /&gt;
-                          &lt;android.widget.Button index="2" package="com.android.chrome" class="android.widget.Button" text="Continue with Google" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,888][973,1001]" displayed="true" /&gt;
-                          &lt;android.widget.Button index="3" package="com.android.chrome" class="android.widget.Button" text="Continue with Facebook" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,1040][973,1152]" displayed="true" /&gt;
-                          &lt;android.view.View index="4" package="com.android.chrome" class="android.view.View" text="&amp;#10;" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,737][973,1249]" displayed="true" /&gt;
-                          &lt;android.widget.TextView index="5" package="com.android.chrome" class="android.widget.TextView" text="We won't post to any of your accounts without asking first" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,1205][899,1243]" displayed="true" /&gt;
-                          &lt;android.view.View index="6" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,1268][973,1315]" displayed="true"&gt;
-                            &lt;android.view.View index="0" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,1287][973,1295]" displayed="true" /&gt;
-                            &lt;android.widget.TextView index="1" package="com.android.chrome" class="android.widget.TextView" text="or" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[484,1268][528,1323]" displayed="true" /&gt;
-                          &lt;/android.view.View&gt;
-                          &lt;android.widget.TextView index="7" package="com.android.chrome" class="android.widget.TextView" text="Sign in with your email and password" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,1345][915,1408]" displayed="true" /&gt;
-                          &lt;android.view.View index="8" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,1436][973,1977]" displayed="true"&gt;
-                            &lt;android.view.View index="0" package="com.android.chrome" class="android.view.View" text="Email" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,1436][206,1496]" displayed="true" /&gt;
-                            &lt;android.widget.EditText index="1" package="com.android.chrome" class="android.widget.EditText" text="abcd@gmail.com" resource-id="signInFormUsername" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,1504][973,1601]" displayed="true" /&gt;
-                            &lt;android.view.View index="2" package="com.android.chrome" class="android.view.View" text="Password" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,1598][283,1656]" displayed="true" /&gt;
-                            &lt;android.widget.EditText index="3" package="com.android.chrome" class="android.widget.EditText" text="••••••••" resource-id="signInFormPassword" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="true" scrollable="false" selected="false" bounds="[110,1667][973,1766]" displayed="true" /&gt;
-                            &lt;android.view.View index="4" package="com.android.chrome" class="android.view.View" text="" content-desc="Forgot your password?" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,1766][508,1815]" displayed="true"&gt;
-                              &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="Forgot your password?" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,1766][508,1815]" displayed="true" /&gt;
-                            &lt;/android.view.View&gt;
-                            &lt;android.widget.Button index="5" package="com.android.chrome" class="android.widget.Button" text="submit" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="true" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,1870][973,1977]" displayed="true" /&gt;
-                            &lt;android.view.View index="6" package="com.android.chrome" class="android.view.View" text="&amp;#10;" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,1760][973,1977]" displayed="true" /&gt;
-                            &lt;android.view.View index="7" package="com.android.chrome" class="android.view.View" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[110,2019][973,2079]" displayed="true"&gt;
-                              &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="Need an account?" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[313,2024][627,2074]" displayed="true" /&gt;
-                              &lt;android.widget.TextView index="1" package="com.android.chrome" class="android.widget.TextView" text=" " checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[621,2024][635,2074]" displayed="true" /&gt;
-                              &lt;android.view.View index="2" package="com.android.chrome" class="android.view.View" text="" content-desc="Sign up" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[632,2024][767,2074]" displayed="true"&gt;
-                                &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="Sign up" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[632,2024][767,2074]" displayed="true" /&gt;
-                              &lt;/android.view.View&gt;
-                            &lt;/android.view.View&gt;
-                          &lt;/android.view.View&gt;
-                        &lt;/android.view.View&gt;
-                      &lt;/android.view.View&gt;
-                    &lt;/android.view.View&gt;
-                  &lt;/android.webkit.WebView&gt;
-                &lt;/android.widget.FrameLayout&gt;
-              &lt;/android.widget.FrameLayout&gt;
-              &lt;android.widget.FrameLayout index="1" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/control_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,353]" displayed="true"&gt;
-                &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/toolbar_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,353]" displayed="true"&gt;
-                  &lt;android.widget.FrameLayout index="0" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/toolbar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,325]" displayed="true"&gt;
-                    &lt;android.widget.ImageButton index="0" package="com.android.chrome" class="android.widget.ImageButton" text="" content-desc="Close tab" resource-id="com.android.chrome:id/close_button" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[0,171][132,325]" displayed="true" /&gt;
-                    &lt;android.widget.FrameLayout index="1" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/location_bar_frame_layout" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[132,196][964,299]" displayed="true"&gt;
-                      &lt;android.widget.ImageButton index="0" package="com.android.chrome" class="android.widget.ImageButton" text="" content-desc="Connection is secure. Site information" resource-id="com.android.chrome:id/security_button" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[132,196][209,299]" displayed="true" /&gt;
-                      &lt;android.widget.FrameLayout index="1" package="com.android.chrome" class="android.widget.FrameLayout" text="" resource-id="com.android.chrome:id/title_url_container" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[209,196][964,299]" displayed="true"&gt;
-                        &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="Signin" resource-id="com.android.chrome:id/title_bar" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[209,196][352,255]" displayed="true" /&gt;
-                        &lt;android.widget.LinearLayout index="1" package="com.android.chrome" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[209,255][484,299]" displayed="true"&gt;
-                          &lt;android.widget.TextView index="0" package="com.android.chrome" class="android.widget.TextView" text="auth.vested.co.in" resource-id="com.android.chrome:id/url_bar" checkable="false" checked="false" clickable="true" enabled="false" focusable="false" focused="false" long-clickable="true" password="false" scrollable="false" selected="false" bounds="[209,255][484,299]" displayed="true" /&gt;
-                        &lt;/android.widget.LinearLayout&gt;
-                      &lt;/android.widget.FrameLayout&gt;
-                    &lt;/android.widget.FrameLayout&gt;
-                    &lt;android.widget.ImageButton index="2" package="com.android.chrome" class="android.widget.ImageButton" text="" content-desc="More options" resource-id="com.android.chrome:id/menu_button" checkable="false" checked="false" clickable="true" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[964,171][1080,325]" displayed="true" /&gt;
-                  &lt;/android.widget.FrameLayout&gt;
-                  &lt;android.widget.ImageView index="1" package="com.android.chrome" class="android.widget.ImageView" text="" resource-id="com.android.chrome:id/toolbar_shadow" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,325][1080,353]" displayed="true" /&gt;
-                &lt;/android.widget.FrameLayout&gt;
-                &lt;android.widget.ProgressBar index="1" package="com.android.chrome" class="android.widget.ProgressBar" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,319][1080,325]" displayed="true" /&gt;
-              &lt;/android.widget.FrameLayout&gt;
-            &lt;/android.view.ViewGroup&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1977]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.vested.investing.android.staging" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1977]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.vested.investing.android.staging" class="android.widget.LinearLayout" text="" resource-id="com.vested.investing.android.staging:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+            &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+              &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true" /&gt;
+              &lt;android.view.ViewGroup index="1" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true" /&gt;
+              &lt;android.view.ViewGroup index="2" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                    &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                      &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                        &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                          &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                            &lt;android.widget.ScrollView index="0" package="com.vested.investing.android.staging" class="android.widget.ScrollView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                              &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                                &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[442,254][640,452]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="1" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Welcome to Vested!" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[260,480][822,563]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="2" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Invest in US companies and diversify globally with fractional share investing" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,590][998,700]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="3" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,782][171,870]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="4" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Security" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,769][998,827]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="5" package="com.vested.investing.android.staging" class="android.widget.TextView" text="We partner with SEC-regulated and SIPC-member firms that insure your account up to $500,000." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,827][998,998]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="6" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1066][171,1154]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="7" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Compliance" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1053][998,1111]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="8" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Vested seeks to comply with government regulations. We provide tax documents for your filings." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1111][998,1282]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="9" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1350][171,1438]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="10" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Recommendations" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1337][998,1395]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="11" package="com.vested.investing.android.staging" class="android.widget.TextView" text="We offer Vests, curated portfolios that comprise of stocks and/or ETFs. Vests enable you to invest in diversified core assets or focus on specific industries and core themes." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1395][998,1682]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="12" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[232,1750][848,1874]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Start Investing" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[397,1783][683,1841]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.widget.TextView index="13" package="com.vested.investing.android.staging" class="android.widget.TextView" text='By selecting "Start Investing", you agree to our terms and policy. You also acknowledge you have read our disclosure and brochure.' checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1943][998,1977]" displayed="true" /&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                            &lt;/android.widget.ScrollView&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                        &lt;/android.view.ViewGroup&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.view.ViewGroup&gt;
+            &lt;/android.widget.FrameLayout&gt;
           &lt;/android.widget.FrameLayout&gt;
-        &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
       &lt;/android.widget.FrameLayout&gt;
     &lt;/android.widget.LinearLayout&gt;
-    &lt;android.view.View index="1" package="com.android.chrome" class="android.view.View" text="" resource-id="android:id/statusBarBackground" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,171]" displayed="true" /&gt;
+    &lt;android.view.View index="1" package="com.vested.investing.android.staging" class="android.view.View" text="" resource-id="android:id/statusBarBackground" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,171]" displayed="true" /&gt;
   &lt;/android.widget.FrameLayout&gt;
 &lt;/hierarchy&gt;</msg>
-<status status="PASS" starttime="20210330 15:40:27.894" endtime="20210330 15:40:29.052"></status>
+<status status="PASS" starttime="20210330 16:27:52.806" endtime="20210330 16:27:52.995"></status>
 </kw>
-<status status="PASS" starttime="20210330 15:40:27.246" endtime="20210330 15:40:29.052"></status>
+<status status="PASS" starttime="20210330 16:27:47.625" endtime="20210330 16:27:52.995"></status>
 </kw>
-<kw name="&quot;The username or password you entered is invalid&quot; Error message is displayed" library="A_SignIn">
-<kw name="Wait Until Page Contains" library="AppiumLibrary">
-<doc>Waits until `text` appears on current page.</doc>
+<kw name="Vested icon is displayed at the top" library="A_LandingPage">
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
 <arguments>
-<arg>${e_invalidLoginErrorTxt}</arg>
-<arg>timeout=10s</arg>
+<arg>${vf_A_vestedIcon}</arg>
+<arg>loglevel=INFO</arg>
 </arguments>
-<status status="PASS" starttime="20210330 15:40:29.054" endtime="20210330 15:40:30.630"></status>
+<status status="PASS" starttime="20210330 16:27:52.996" endtime="20210330 16:27:53.109"></status>
+</kw>
+<status status="PASS" starttime="20210330 16:27:52.995" endtime="20210330 16:27:53.109"></status>
+</kw>
+<kw name="Text about vested is displayed below the logo" library="A_LandingPage">
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${e_welcomeTxt}</arg>
+<arg>loglevel=INFO</arg>
+</arguments>
+<msg timestamp="20210330 16:27:53.171" level="INFO">Current page contains text 'Welcome to Vested!'.</msg>
+<status status="PASS" starttime="20210330 16:27:53.110" endtime="20210330 16:27:53.171"></status>
 </kw>
 <kw name="Page Should Contain Text" library="AppiumLibrary">
 <doc>Verifies that current page contains `text`.</doc>
 <arguments>
-<arg>${e_invalidLoginErrorTxt}</arg>
+<arg>${e_aboutVestedTxt}</arg>
 <arg>loglevel=INFO</arg>
 </arguments>
-<msg timestamp="20210330 15:40:30.697" level="INFO">Current page contains text 'The username or password you entered is invalid'.</msg>
-<status status="PASS" starttime="20210330 15:40:30.630" endtime="20210330 15:40:30.697"></status>
+<msg timestamp="20210330 16:27:53.215" level="INFO">Current page contains text 'Invest in US companies and diversify globally with fractional share investing'.</msg>
+<status status="PASS" starttime="20210330 16:27:53.171" endtime="20210330 16:27:53.215"></status>
+</kw>
+<status status="PASS" starttime="20210330 16:27:53.110" endtime="20210330 16:27:53.215"></status>
+</kw>
+<tags>
+<tag>SL01</tag>
+</tags>
+<status status="PASS" starttime="20210330 16:27:47.624" endtime="20210330 16:27:53.215" critical="yes"></status>
+</test>
+<test id="s1-t2" name="Points on Security, Compliance and Recommendations in Landing page">
+<kw name="Landing page is loaded completely" library="A_LandingPage">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${e_startInvestingTxt}</arg>
+<arg>timeout=20s</arg>
+</arguments>
+<status status="PASS" starttime="20210330 16:27:53.217" endtime="20210330 16:27:53.277"></status>
+</kw>
+<kw name="Log Source" library="AppiumLibrary">
+<doc>Logs and returns the entire html source of the current page or frame.</doc>
+<arguments>
+<arg>loglevel=INFO</arg>
+</arguments>
+<msg timestamp="20210330 16:27:53.325" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="1977"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1977]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.vested.investing.android.staging" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1977]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.vested.investing.android.staging" class="android.widget.LinearLayout" text="" resource-id="com.vested.investing.android.staging:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+            &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+              &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true" /&gt;
+              &lt;android.view.ViewGroup index="1" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true" /&gt;
+              &lt;android.view.ViewGroup index="2" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                    &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                      &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                        &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                          &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                            &lt;android.widget.ScrollView index="0" package="com.vested.investing.android.staging" class="android.widget.ScrollView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                              &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                                &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[442,254][640,452]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="1" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Welcome to Vested!" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[260,480][822,563]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="2" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Invest in US companies and diversify globally with fractional share investing" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,590][998,700]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="3" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,782][171,870]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="4" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Security" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,769][998,827]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="5" package="com.vested.investing.android.staging" class="android.widget.TextView" text="We partner with SEC-regulated and SIPC-member firms that insure your account up to $500,000." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,827][998,998]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="6" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1066][171,1154]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="7" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Compliance" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1053][998,1111]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="8" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Vested seeks to comply with government regulations. We provide tax documents for your filings." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1111][998,1282]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="9" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1350][171,1438]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="10" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Recommendations" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1337][998,1395]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="11" package="com.vested.investing.android.staging" class="android.widget.TextView" text="We offer Vests, curated portfolios that comprise of stocks and/or ETFs. Vests enable you to invest in diversified core assets or focus on specific industries and core themes." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1395][998,1682]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="12" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[232,1750][848,1874]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Start Investing" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[397,1783][683,1841]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.widget.TextView index="13" package="com.vested.investing.android.staging" class="android.widget.TextView" text='By selecting "Start Investing", you agree to our terms and policy. You also acknowledge you have read our disclosure and brochure.' checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1943][998,1977]" displayed="true" /&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                            &lt;/android.widget.ScrollView&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                        &lt;/android.view.ViewGroup&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.view.ViewGroup&gt;
+            &lt;/android.widget.FrameLayout&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+    &lt;android.view.View index="1" package="com.vested.investing.android.staging" class="android.view.View" text="" resource-id="android:id/statusBarBackground" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,171]" displayed="true" /&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<status status="PASS" starttime="20210330 16:27:53.277" endtime="20210330 16:27:53.326"></status>
+</kw>
+<status status="PASS" starttime="20210330 16:27:53.216" endtime="20210330 16:27:53.326"></status>
+</kw>
+<kw name="Verify 3 points on Security, Compliance and Recommendations with icons are displayed" library="A_LandingPage">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${e_securityHeading}</arg>
+<arg>timeout=40s</arg>
+</arguments>
+<status status="PASS" starttime="20210330 16:27:53.326" endtime="20210330 16:27:53.385"></status>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${e_securityTxt}</arg>
+<arg>loglevel=INFO</arg>
+</arguments>
+<msg timestamp="20210330 16:27:53.443" level="INFO">Current page contains text 'We partner with SEC-regulated and SIPC-member firms that insure your account up to $500,000'.</msg>
+<status status="PASS" starttime="20210330 16:27:53.386" endtime="20210330 16:27:53.443"></status>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${e_complianceTxt}</arg>
+<arg>loglevel=INFO</arg>
+</arguments>
+<msg timestamp="20210330 16:27:53.488" level="INFO">Current page contains text 'Vested seeks to comply with government regulations. We provide tax documents for your filings'.</msg>
+<status status="PASS" starttime="20210330 16:27:53.443" endtime="20210330 16:27:53.488"></status>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${e_recommendationsTxt}</arg>
+<arg>loglevel=INFO</arg>
+</arguments>
+<msg timestamp="20210330 16:27:53.529" level="INFO">Current page contains text 'We offer Vests, curated portfolios that comprise of stocks and/or ETFs. Vests enable you to invest in diversified core assets or focus on specific industries and core themes'.</msg>
+<status status="PASS" starttime="20210330 16:27:53.488" endtime="20210330 16:27:53.529"></status>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <doc>Logs the given message to the console.</doc>
 <arguments>
-<arg>Verified error msg text</arg>
+<arg>Verified Text part</arg>
 </arguments>
-<status status="PASS" starttime="20210330 15:40:30.698" endtime="20210330 15:40:30.698"></status>
+<status status="PASS" starttime="20210330 16:27:53.529" endtime="20210330 16:27:53.529"></status>
 </kw>
-<status status="PASS" starttime="20210330 15:40:29.053" endtime="20210330 15:40:30.698"></status>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
+<arguments>
+<arg>${vf_A_securityIcon}</arg>
+<arg>loglevel=INFO</arg>
+</arguments>
+<status status="PASS" starttime="20210330 16:27:53.529" endtime="20210330 16:27:53.609"></status>
+</kw>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
+<arguments>
+<arg>${vf_A_complianceIcon}</arg>
+<arg>loglevel=INFO</arg>
+</arguments>
+<status status="PASS" starttime="20210330 16:27:53.609" endtime="20210330 16:27:53.667"></status>
+</kw>
+<kw name="Element Should Be Visible" library="AppiumLibrary">
+<doc>Verifies that element identified with locator is visible.</doc>
+<arguments>
+<arg>${vf_A_recommendationsIcon}</arg>
+<arg>loglevel=INFO</arg>
+</arguments>
+<status status="PASS" starttime="20210330 16:27:53.668" endtime="20210330 16:27:53.799"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Verified all Icons</arg>
+</arguments>
+<status status="PASS" starttime="20210330 16:27:53.799" endtime="20210330 16:27:53.799"></status>
+</kw>
+<status status="PASS" starttime="20210330 16:27:53.326" endtime="20210330 16:27:53.800"></status>
+</kw>
+<kw name="Verify Heading for each point is displayed" library="A_LandingPage">
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${e_securityHeading}</arg>
+<arg>loglevel=INFO</arg>
+</arguments>
+<msg timestamp="20210330 16:27:53.973" level="INFO">Current page contains text 'Security'.</msg>
+<status status="PASS" starttime="20210330 16:27:53.800" endtime="20210330 16:27:53.974"></status>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${e_complianceHeading}</arg>
+<arg>loglevel=INFO</arg>
+</arguments>
+<msg timestamp="20210330 16:27:54.053" level="INFO">Current page contains text 'Compliance'.</msg>
+<status status="PASS" starttime="20210330 16:27:53.974" endtime="20210330 16:27:54.053"></status>
+</kw>
+<kw name="Page Should Contain Text" library="AppiumLibrary">
+<doc>Verifies that current page contains `text`.</doc>
+<arguments>
+<arg>${e_recommendationsTxt}</arg>
+<arg>loglevel=INFO</arg>
+</arguments>
+<msg timestamp="20210330 16:27:54.097" level="INFO">Current page contains text 'We offer Vests, curated portfolios that comprise of stocks and/or ETFs. Vests enable you to invest in diversified core assets or focus on specific industries and core themes'.</msg>
+<status status="PASS" starttime="20210330 16:27:54.053" endtime="20210330 16:27:54.097"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Verified all Headings</arg>
+</arguments>
+<status status="PASS" starttime="20210330 16:27:54.097" endtime="20210330 16:27:54.097"></status>
+</kw>
+<kw name="Log Source" library="AppiumLibrary">
+<doc>Logs and returns the entire html source of the current page or frame.</doc>
+<arguments>
+<arg>loglevel=INFO</arg>
+</arguments>
+<msg timestamp="20210330 16:27:54.147" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="1977"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1977]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.vested.investing.android.staging" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1977]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.vested.investing.android.staging" class="android.widget.LinearLayout" text="" resource-id="com.vested.investing.android.staging:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+            &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+              &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true" /&gt;
+              &lt;android.view.ViewGroup index="1" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true" /&gt;
+              &lt;android.view.ViewGroup index="2" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                    &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                      &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                        &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                          &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                            &lt;android.widget.ScrollView index="0" package="com.vested.investing.android.staging" class="android.widget.ScrollView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                              &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                                &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[442,254][640,452]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="1" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Welcome to Vested!" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[260,480][822,563]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="2" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Invest in US companies and diversify globally with fractional share investing" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,590][998,700]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="3" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,782][171,870]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="4" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Security" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,769][998,827]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="5" package="com.vested.investing.android.staging" class="android.widget.TextView" text="We partner with SEC-regulated and SIPC-member firms that insure your account up to $500,000." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,827][998,998]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="6" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1066][171,1154]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="7" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Compliance" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1053][998,1111]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="8" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Vested seeks to comply with government regulations. We provide tax documents for your filings." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1111][998,1282]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="9" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1350][171,1438]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="10" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Recommendations" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1337][998,1395]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="11" package="com.vested.investing.android.staging" class="android.widget.TextView" text="We offer Vests, curated portfolios that comprise of stocks and/or ETFs. Vests enable you to invest in diversified core assets or focus on specific industries and core themes." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1395][998,1682]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="12" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[232,1750][848,1874]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Start Investing" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[397,1783][683,1841]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.widget.TextView index="13" package="com.vested.investing.android.staging" class="android.widget.TextView" text='By selecting "Start Investing", you agree to our terms and policy. You also acknowledge you have read our disclosure and brochure.' checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1943][998,1977]" displayed="true" /&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                            &lt;/android.widget.ScrollView&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                        &lt;/android.view.ViewGroup&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.view.ViewGroup&gt;
+            &lt;/android.widget.FrameLayout&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+    &lt;android.view.View index="1" package="com.vested.investing.android.staging" class="android.view.View" text="" resource-id="android:id/statusBarBackground" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,171]" displayed="true" /&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<status status="PASS" starttime="20210330 16:27:54.097" endtime="20210330 16:27:54.147"></status>
+</kw>
+<status status="PASS" starttime="20210330 16:27:53.800" endtime="20210330 16:27:54.147"></status>
 </kw>
 <tags>
-<tag>SL07</tag>
+<tag>SL02</tag>
 </tags>
-<status status="PASS" starttime="20210330 15:40:16.193" endtime="20210330 15:40:30.698" critical="yes"></status>
+<status status="PASS" starttime="20210330 16:27:53.216" endtime="20210330 16:27:54.147" critical="yes"></status>
 </test>
-<status status="PASS" starttime="20210330 15:40:04.134" endtime="20210330 15:40:30.700"></status>
+<test id="s1-t3" name="Start Investing button is clickable in Landing page">
+<kw name="Landing page is loaded completely" library="A_LandingPage">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>${e_startInvestingTxt}</arg>
+<arg>timeout=20s</arg>
+</arguments>
+<status status="PASS" starttime="20210330 16:27:54.149" endtime="20210330 16:27:54.200"></status>
+</kw>
+<kw name="Log Source" library="AppiumLibrary">
+<doc>Logs and returns the entire html source of the current page or frame.</doc>
+<arguments>
+<arg>loglevel=INFO</arg>
+</arguments>
+<msg timestamp="20210330 16:27:54.251" level="INFO">&lt;?xml version='1.0' encoding='UTF-8' standalone='yes' ?&gt;
+&lt;hierarchy index="0" class="hierarchy" rotation="0" width="1080" height="1977"&gt;
+  &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1977]" displayed="true"&gt;
+    &lt;android.widget.LinearLayout index="0" package="com.vested.investing.android.staging" class="android.widget.LinearLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,1977]" displayed="true"&gt;
+      &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+        &lt;android.widget.LinearLayout index="0" package="com.vested.investing.android.staging" class="android.widget.LinearLayout" text="" resource-id="com.vested.investing.android.staging:id/action_bar_root" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+          &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" resource-id="android:id/content" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+            &lt;android.widget.FrameLayout index="0" package="com.vested.investing.android.staging" class="android.widget.FrameLayout" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+              &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true" /&gt;
+              &lt;android.view.ViewGroup index="1" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true" /&gt;
+              &lt;android.view.ViewGroup index="2" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                  &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                    &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                      &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                        &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                          &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                            &lt;android.widget.ScrollView index="0" package="com.vested.investing.android.staging" class="android.widget.ScrollView" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="true" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                              &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,171][1080,1977]" displayed="true"&gt;
+                                &lt;android.view.ViewGroup index="0" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[442,254][640,452]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="1" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Welcome to Vested!" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[260,480][822,563]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="2" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Invest in US companies and diversify globally with fractional share investing" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,590][998,700]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="3" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,782][171,870]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="4" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Security" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,769][998,827]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="5" package="com.vested.investing.android.staging" class="android.widget.TextView" text="We partner with SEC-regulated and SIPC-member firms that insure your account up to $500,000." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,827][998,998]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="6" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1066][171,1154]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="7" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Compliance" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1053][998,1111]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="8" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Vested seeks to comply with government regulations. We provide tax documents for your filings." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1111][998,1282]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="9" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1350][171,1438]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="10" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Recommendations" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1337][998,1395]" displayed="true" /&gt;
+                                &lt;android.widget.TextView index="11" package="com.vested.investing.android.staging" class="android.widget.TextView" text="We offer Vests, curated portfolios that comprise of stocks and/or ETFs. Vests enable you to invest in diversified core assets or focus on specific industries and core themes." checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[226,1395][998,1682]" displayed="true" /&gt;
+                                &lt;android.view.ViewGroup index="12" package="com.vested.investing.android.staging" class="android.view.ViewGroup" text="" checkable="false" checked="false" clickable="false" enabled="true" focusable="true" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[232,1750][848,1874]" displayed="true"&gt;
+                                  &lt;android.widget.TextView index="0" package="com.vested.investing.android.staging" class="android.widget.TextView" text="Start Investing" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[397,1783][683,1841]" displayed="true" /&gt;
+                                &lt;/android.view.ViewGroup&gt;
+                                &lt;android.widget.TextView index="13" package="com.vested.investing.android.staging" class="android.widget.TextView" text='By selecting "Start Investing", you agree to our terms and policy. You also acknowledge you have read our disclosure and brochure.' checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[83,1943][998,1977]" displayed="true" /&gt;
+                              &lt;/android.view.ViewGroup&gt;
+                            &lt;/android.widget.ScrollView&gt;
+                          &lt;/android.view.ViewGroup&gt;
+                        &lt;/android.view.ViewGroup&gt;
+                      &lt;/android.view.ViewGroup&gt;
+                    &lt;/android.view.ViewGroup&gt;
+                  &lt;/android.view.ViewGroup&gt;
+                &lt;/android.view.ViewGroup&gt;
+              &lt;/android.view.ViewGroup&gt;
+            &lt;/android.widget.FrameLayout&gt;
+          &lt;/android.widget.FrameLayout&gt;
+        &lt;/android.widget.LinearLayout&gt;
+      &lt;/android.widget.FrameLayout&gt;
+    &lt;/android.widget.LinearLayout&gt;
+    &lt;android.view.View index="1" package="com.vested.investing.android.staging" class="android.view.View" text="" resource-id="android:id/statusBarBackground" checkable="false" checked="false" clickable="false" enabled="true" focusable="false" focused="false" long-clickable="false" password="false" scrollable="false" selected="false" bounds="[0,0][1080,171]" displayed="true" /&gt;
+  &lt;/android.widget.FrameLayout&gt;
+&lt;/hierarchy&gt;</msg>
+<status status="PASS" starttime="20210330 16:27:54.200" endtime="20210330 16:27:54.251"></status>
+</kw>
+<status status="PASS" starttime="20210330 16:27:54.149" endtime="20210330 16:27:54.251"></status>
+</kw>
+<kw name="Click on 'Start Investing' button" library="A_LandingPage">
+<kw name="Click Text" library="AppiumLibrary">
+<doc>Click text identified by ``text``.</doc>
+<arguments>
+<arg>Start Investing</arg>
+<arg>exact_match=True</arg>
+</arguments>
+<status status="PASS" starttime="20210330 16:27:54.252" endtime="20210330 16:27:54.369"></status>
+</kw>
+<status status="PASS" starttime="20210330 16:27:54.252" endtime="20210330 16:27:54.369"></status>
+</kw>
+<kw name="Sign in page is displayed" library="A_LandingPage">
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>Sign in with your email and password</arg>
+</arguments>
+<status status="PASS" starttime="20210330 16:27:54.370" endtime="20210330 16:27:58.642"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Sign-in Page Verified!</arg>
+</arguments>
+<status status="PASS" starttime="20210330 16:27:58.642" endtime="20210330 16:27:58.643"></status>
+</kw>
+<status status="PASS" starttime="20210330 16:27:54.370" endtime="20210330 16:27:58.643"></status>
+</kw>
+<tags>
+<tag>SL03</tag>
+</tags>
+<status status="PASS" starttime="20210330 16:27:54.148" endtime="20210330 16:27:58.643" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20210330 16:27:37.024" endtime="20210330 16:27:58.647"></status>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0">Critical Tests</stat>
-<stat pass="1" fail="0">All Tests</stat>
+<stat pass="3" fail="0">Critical Tests</stat>
+<stat pass="3" fail="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0">SL07</stat>
+<stat pass="1" fail="0">SL01</stat>
+<stat pass="1" fail="0">SL02</stat>
+<stat pass="1" fail="0">SL03</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" id="s1" name="SL 07">SL 07</stat>
+<stat pass="3" fail="0" id="s1" name="A LandingPageTests">A LandingPageTests</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20210330 15:40:04.403" level="ERROR">Error in file '/Users/apple/Tools/Git/GitRepo/AppLocators/Android/SignInLocators.robot' on line 7: Invalid variable name '${e_emptyFieldErrorTxt} = Please fill out this'.</msg>
-<msg timestamp="20210330 15:40:04.416" level="ERROR">Error in file '/Users/apple/Tools/Git/GitRepo/Resources/Utils/Android/A_Common.robot' on line 3: Importing test library 'JSONLibrary' failed: ModuleNotFoundError: No module named 'JSONLibrary'
+<msg timestamp="20210330 16:27:37.300" level="ERROR">Error in file '/Users/apple/Tools/Git/GitRepo/AppLocators/Android/SignInLocators.robot' on line 7: Invalid variable name '${e_emptyFieldErrorTxt} = Please fill out this'.</msg>
+<msg timestamp="20210330 16:27:37.312" level="ERROR">Error in file '/Users/apple/Tools/Git/GitRepo/Resources/Utils/Android/A_Common.robot' on line 3: Importing test library 'JSONLibrary' failed: ModuleNotFoundError: No module named 'JSONLibrary'
 Traceback (most recent call last):
   None
 PYTHONPATH:

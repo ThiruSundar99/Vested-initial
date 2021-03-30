@@ -35,6 +35,13 @@ Verify Heading for each point is displayed
     Page Should Contain Text  ${e_recommendationsTxt}  loglevel=INFO
     log to Console  Verified all Headings
     Log Source  loglevel=INFO
+    
+Click on 'Start Investing' button
+    Click Text  Start Investing  exact_match=True
+    
+Sign in page is displayed
+    Wait Until Page Contains  Sign in with your email and password
+    Log to Console  Sign-in Page Verified!
 
 Verify Landing Page On Mobile
     Log To Console  Landing Page 
