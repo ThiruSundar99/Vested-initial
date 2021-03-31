@@ -40,6 +40,7 @@ Click on 'Start Investing' button
     Click Text  Start Investing  exact_match=True
     
 Sign in page is displayed
+    Sleep  5s
     Wait Until Page Contains  Sign in with your email and password
     Log to Console  Sign-in Page Verified!
 

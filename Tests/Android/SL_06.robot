@@ -8,15 +8,16 @@ Suite Setup  Open Vested App On Emulator
 #Suite Teardown  Close Application
 #UNABLE TO CLOSE APP?
 
-# robot -d Results Tests/Android/SL_07.robot
-# robot -d Results --loglevel TRACE Tests/Android/SL_07.robot
+# robot -d Results Tests/Android/SL_06.robot
+# robot -d Results -L Debug -i order Tests
+# robot -d Results --loglevel TRACE Tests/Android/SL_06.robot
 
 *** Test Cases ***
 
-Sign in with invalid login credentials
-    [Tags]  SL07
+Sign in with valid login credentials 
+    [Tags]  SL06
     User is navigated to Sign In page
-    Sign-in with invalid Credentials
-    "The username or password you entered is invalid" Error message is displayed
+    Sign-in with valid Credentials
+    User is logged-in and directed to Dashboard page
 
 # NOTE: CLEAR CACHE TO BE DONE BEFORE EVERY RUN

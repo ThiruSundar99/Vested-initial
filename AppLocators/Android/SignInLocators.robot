@@ -1,10 +1,13 @@
 *** Variables ***
 
 #  Test data or expected values
+${e_username} =  indrajit+9377@vestedfinance.co
+${e_pwd} =  iTestUser1!
+${e_pin} =  111111
 ${e_incorrectUserName} =  abcd@gmail.com
-${e_incorrectPassword} =  Abcd@123
+${e_incorrectPwd} =  Abcd@123
 ${e_invalidLoginErrorTxt} =  The username or password you entered is invalid
-${e_emptyFieldErrorTxt} = Please fill out this
+${e_emptyFieldErrorTxt} = Please fill out this field
 
 #Singin
 ${vf_A_signInBtn} =  xpath=//*[@name='signInSubmitButton']

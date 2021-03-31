@@ -18,7 +18,7 @@ Open Vested App On Real Device
     Open Application  ${server}  platformName=${platform}  platformVersion=${platform_version}  deviceName=${device}  automationName=${appium}  appActivity=${app_activity}  appPackage=${app_package}
    
 Open Vested App On Emulator
-    Open Application  http://localhost:4723/wd/hub  platformName=${platform}   deviceName=${emulator}   appPackage=${app_package}   appActivity=${app_activity}  automationName=Uiautomator2
+    Open Application  http://localhost:4723/wd/hub  platformName=${platform}   deviceName=${emulator}   appPackage=${app_package}   appActivity=${app_activity}  noReset=${noReset}  automationName=Uiautomator2
 
 Verify Element And Text On Android
     [Arguments]  ${element}  ${text}
