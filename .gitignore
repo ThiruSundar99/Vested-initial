@@ -1,0 +1,12 @@
+# IDE Specific
+.DS_Store
+.vscode/
+.idea/
+secureRead.py
+log.html
+report.html
+output.xml
+.png
+.apk
+.log
+.pdf
