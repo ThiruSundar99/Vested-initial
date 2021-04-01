@@ -1,55 +1,45 @@
 *** Settings ***
-
 Library     AppiumLibrary
-Resource   ../../../AppLocators/Android/CommonAppLocators.robot
-Resource   ../../../AppLocators/Android/LandingPageLocators.robot
+Resource   ../../../AppLocators/Android/A_CommonAppLocators.robot
+Resource   ../../../AppLocators/Android/A_LandingPageLocators.robot
 
 
 *** Keywords ***
+Landing Page Is Loaded Completely
+    Wait For Element Visibility On Android  ${vf_A_startInvestingBtn}
+    Log Source
 
-Landing page is loaded completely
-    Wait Until Page Contains  ${e_startInvestingTxt}  timeout=20s
-    Log Source  loglevel=INFO
-
-Vested icon is displayed at the top
-    Element Should Be Visible  ${vf_A_vestedIcon}  loglevel=INFO
-
-Text about vested is displayed below the logo
-    Page Should Contain Text  ${e_welcomeTxt}  loglevel=INFO
-    Page Should Contain Text  ${e_aboutVestedTxt}  loglevel=INFO
+App logo & text is displayed at the top
+    Verify Element Visibility  ${vf_A_vestedIcon}
+    Verify Page Conatin Text  ${e_welcomeTxt}
+    Verify Page Conatin Text  ${e_aboutVestedTxt}
 
 Verify 3 points on Security, Compliance and Recommendations with icons are displayed
-    Wait Until Page Contains  ${e_securityHeading}   timeout=40s
-    Page Should Contain Text  ${e_securityTxt}  loglevel=INFO
-    Page Should Contain Text  ${e_complianceTxt}  loglevel=INFO
-    Page Should Contain Text  ${e_recommendationsTxt}  loglevel=INFO
-    log to Console  Verified Text part
-    Element Should Be Visible  ${vf_A_securityIcon}  loglevel=INFO
-    Element Should Be Visible  ${vf_A_complianceIcon}  loglevel=INFO
-    Element Should Be Visible  ${vf_A_recommendationsIcon}  loglevel=INFO 
-    log to Console  Verified all Icons
+    Wait For Page Conatin Element  ${e_securityHeading}  timeout=40s
+    Verify Page Conatin Text  ${e_securityTxt}
+    Verify Page Conatin Text  ${e_complianceTxt}
+    Verify Page Conatin Text  ${e_recommendationsTxt}
+    Log to Console  Verified Text part
+    Verify Element Visibility  ${vf_A_securityIcon}
+    Verify Element Visibility  ${vf_A_complianceIcon}
+    Verify Element Visibility  ${vf_A_recommendationsIcon} 
+    Log to Console  Verified all Icons
     
 Verify Heading for each point is displayed
-    Page Should Contain Text  ${e_securityHeading}  loglevel=INFO
-    Page Should Contain Text  ${e_complianceHeading}  loglevel=INFO
-    Page Should Contain Text  ${e_recommendationsTxt}  loglevel=INFO
-    log to Console  Verified all Headings
-    Log Source  loglevel=INFO
+    Verify Page Conatin Text  ${e_securityHeading}
+    Verify Page Conatin Text  ${e_complianceHeading}
+    Verify Page Conatin Text  ${e_recommendationsTxt}
+    Log to Console  Verified all Headings
+    Log Source
     
-Click on 'Start Investing' button
-    Click Text  Start Investing  exact_match=True
-    
-Sign in page is displayed
-    Sleep  5s
-    Wait Until Page Contains  Sign in with your email and password
-    Log to Console  Sign-in Page Verified!
+Click On Start Investing Button
+    Click On Element If Visibile  ${vf_A_startInvestingBtn}
 
 Verify Landing Page On Mobile
     Log To Console  Landing Page 
     Wait For Element Visibility On Android  ${vf_A_screenHeader}
     Verify Element And Text On Android  ${vf_A_screenHeader}  ${e_screenHeader}
     Wait And Click Element On Android  ${vf_A_startInvestingBtn}
-    
     
 Verify Buy Sell Stock On Mobile
     # Buy
@@ -98,7 +88,7 @@ Verify Buy Sell Stock On Mobile
 Logout Of Application
     Wait For Element Visibility On Android  ${vf_A_profile}
     Mouse Over  ${vf_A_profile}
-    Click Element  ${vf_A_logout}
+    Click Element  ${vf_A_Logout}
     Sleep  5s
     Verify Element And Text On Android  ${vf_A_screenHeader}  ${e_screenHeader}
     Sleep  5s
